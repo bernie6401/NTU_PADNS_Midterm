@@ -2,12 +2,13 @@
 /*
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './practice_App'
-import './index.css'
+// import App from './practice/practice_App'
+// import './index.css'
+import Headers from "./pages/header";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Headers />
   </React.StrictMode>,
 )
 */
@@ -17,16 +18,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import RootLayout, { RootIndex } from "./pages/practice_index";
-import About from "./pages/practice_about";
+import { RootIndex } from "./pages/index";
+import About from "./pages/about";
+import Headers from "./pages/header";
 import "./index.css";
 
-// If you use hash router, the sub-page will not pass to backend,
-// it'll render at front end immediately instead
 const router = createHashRouter([
   {
     path: "/",
-    element: <RootLayout />,
+    element: <Headers />,
     children: [
       { index: true, element: <RootIndex /> },
       {
