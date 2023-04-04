@@ -14,6 +14,7 @@ const app = express();
 //   res.send("Got a POST request");
 // });
 
+app.use(express.json());
 
 app.use(express.static(frontendDir));
 app.use(rootRouter);
