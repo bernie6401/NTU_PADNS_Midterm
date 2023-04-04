@@ -4,11 +4,16 @@ import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline'
 import About from './about'
 import { RootIndex } from "./index"
 import { Link, Outlet } from "react-router-dom";
+import services from "../services";
 
 
 
 export default function Headers() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  services.user.getAll().then((data) => {
+    console.log(data);
+  });
 
   return (
     <><header className="bg-white">
