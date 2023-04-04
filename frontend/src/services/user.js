@@ -1,8 +1,8 @@
 import api from "./axiosClient";
 
 export const user = {
-  async getAll() {
-    const { data } = await api.get("/users");
+  async createOne({ name }) {
+    const { data } = await api.post("/users", { name });
     return data;
   },
 };
