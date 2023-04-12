@@ -7,7 +7,6 @@ services:
             - 8000:80
         volumes:
             - ./www:/var/www/html/
-            - ./php_ini:/usr/local/etc/php/
         links:
             - db
         networks:
