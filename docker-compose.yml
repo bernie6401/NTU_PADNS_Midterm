@@ -7,6 +7,7 @@ services:
             - 8000:80
         volumes:
             - ./www:/var/www/html/
+            - ./php_ini:/usr/local/etc/php/
         links:
             - db
         networks:
@@ -23,7 +24,7 @@ services:
             - ./db:/docker-entrypoint-initdb.d
         networks:
             - default
-        hostname: root.sbkntustws.social
+        # hostname: root.sbkntustws.social
         restart: unless-stopped
     phpmyadmin:
         image: phpmyadmin/phpmyadmin

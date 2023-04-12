@@ -1,6 +1,6 @@
 <?php 
     session_save_path('/var/www/html/session_data');
-    session_start();
+    // session_start();
 ?>
 <html>
     <head>
@@ -21,7 +21,7 @@
         <!-- main signup part -->
         <div class="form-floating form-floating-adjust padding-left-mid">
             <form class="row g-3 needs-validation" novalidate id="formAdd" name="formAdd" method="post">
-                <div class="margin-top-div-adjust">
+                <!-- <div class="margin-top-div-adjust">
                     <label for="validationCustom01">
                         First name
                         <span class="required-star-adjust">*</span>
@@ -41,7 +41,7 @@
                     <div class="valid-feedback">
                     Looks good!
                     </div>
-                </div>
+                </div> -->
 
                 <div class="margin-top-div-adjust">
                     <label for="validationCustomUsername">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
 
-                <div class="margin-top-div-adjust">
+                <!-- <div class="margin-top-div-adjust">
                     <label for="validationCustomEmail">
                         Email
                         <span class="required-star-adjust">*</span>
@@ -82,9 +82,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                </div>
+                </div> -->
 
-                <div class="margin-top-div-adjust">
+                <!-- <div class="margin-top-div-adjust">
                     <label for="validationCustom04">
                         State
                         <span class="required-star-adjust">*</span>
@@ -117,10 +117,10 @@
                     <div class="invalid-feedback">
                         Please select a valid city.
                     </div>
-                </div>
+                </div> -->
 
 
-                <div class="margin-top-div-adjust">
+                <!-- <div class="margin-top-div-adjust">
                     <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck">
@@ -130,11 +130,11 @@
                         You must agree before submitting.
                     </div>
                     </div>
-                </div>
+                </div> -->
 
 
                 <!-- submit button -->
-                <div class="margin-top-div-adjust">
+                <!-- <div class="margin-top-div-adjust">
                     <div
                         class="g-recaptcha"
                         data-sitekey="6LeHJ9ofAAAAADeUSMkMaReVjurI3nxSzGL6iWZy"
@@ -145,7 +145,10 @@
                     </div>
                     <button class="none float-right-adjust btn btn-primary" id="verify-false" type="button">You're robot.</button>
                     <button class="none float-right-adjust btn btn-primary" id="verify-true" type="submit" name="submit_bt">Submit form</button>
-                </div>
+                </div> -->
+
+                <button class="none float-right-adjust btn btn-primary" id="verify-false" type="button">You're robot.</button>
+                <button class="float-right-adjust btn btn-primary" id="verify-true" type="submit" name="submit_bt">Submit form</button>
             </form>
         </div>
     </body>

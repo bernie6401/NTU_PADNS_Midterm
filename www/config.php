@@ -5,8 +5,8 @@
 
         define('DB_SERVER', 'db');
         define('DB_USERNAME', 'sbk');
-        define('DB_PASSWORD', 'TheQueensGambit');
-        define('DB_NAME', 'user_info');
+        define('DB_PASSWORD', 'taadtaad');
+        define('DB_NAME', 'myDB');
         
         $db_link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         
