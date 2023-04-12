@@ -43,6 +43,8 @@
                     </div>
                 </div> -->
 
+                </br></br></br></br></br></br></br></br></br></br></br></br>
+
                 <div class="margin-top-div-adjust">
                     <label for="validationCustomUsername">
                         Username
@@ -216,17 +218,17 @@
             x.type = "password";
     }
 
-    function onClick(e)
-    {
-        e.preventDefault();
-        grecaptcha.ready(function()
-        {
-            grecaptcha.execute('6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks', {action: 'submit'}).then(function(token)
-            {
-                // Add your logic to submit to your backend server here.
-            });
-        });
-    }
+    // function onClick(e)
+    // {
+    //     e.preventDefault();
+    //     grecaptcha.ready(function()
+    //     {
+    //         grecaptcha.execute('6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks', {action: 'submit'}).then(function(token)
+    //         {
+    //             // Add your logic to submit to your backend server here.
+    //         });
+    //     });
+    // }
 
     // function onSubmit(token)
     // {
@@ -235,55 +237,55 @@
 
 
     // 取 ip
-    var uriIP = 'https://www.cloudflare.com/cdn-cgi/trace';
-    var ip;
-    fetch(uriIP)
-    .then(response => response.text())
-    .then(result =>
-    {
-        var resultArr = result.split('\n');
-        for(var i = 0, len = resultArr.length; i < len; i++)
-        {
-            var tempArr = resultArr[i].split('=');
-            if(tempArr[0] == 'ip')
-            {
-                ip = tempArr[1];
-                break;
-            }
-        }
-    })
-    .catch(err => {window.alert(err)});
+    // var uriIP = 'https://www.cloudflare.com/cdn-cgi/trace';
+    // var ip;
+    // fetch(uriIP)
+    // .then(response => response.text())
+    // .then(result =>
+    // {
+    //     var resultArr = result.split('\n');
+    //     for(var i = 0, len = resultArr.length; i < len; i++)
+    //     {
+    //         var tempArr = resultArr[i].split('=');
+    //         if(tempArr[0] == 'ip')
+    //         {
+    //             ip = tempArr[1];
+    //             break;
+    //         }
+    //     }
+    // })
+    // .catch(err => {window.alert(err)});
 
-    function verifyCallback(token)
-    {
-        var formData = new FormData();
-        formData.append('token', token);
-        formData.append('ip', ip);
+    // function verifyCallback(token)
+    // {
+    //     var formData = new FormData();
+    //     formData.append('token', token);
+    //     formData.append('ip', ip);
             
-        // Google Apps Script 部署為網路應用程式後取得的 URL
-        var uriGAS = 'https://script.google.com/macros/s/AKfycbzeosH-DyfyS1CzVlrgoiV11CAM6a9Zy_TpCqDlrjQ5y4yL6qW1RfYoaowVMXH3rxk/exec';
+    //     // Google Apps Script 部署為網路應用程式後取得的 URL
+    //     var uriGAS = 'https://script.google.com/macros/s/AKfycbzeosH-DyfyS1CzVlrgoiV11CAM6a9Zy_TpCqDlrjQ5y4yL6qW1RfYoaowVMXH3rxk/exec';
             
-        fetch(uriGAS,
-        {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(result =>
-        {
-            if(result.success)
-            {
-                // 後端驗證成功，success 會是 true
-                // 這邊寫驗證成功後要做的事
-                document.getElementById('verify-true').classList.remove('none');
-            }
-            else
-            {
-                // success 為 false 時，代表驗證失敗，error-codes 會告知原因
-                window.alert(result['error-codes'][0])
-                document.getElementById('verify-false').classList.remove('none');
-            }
-        })
-        .catch(err => {window.alert(err)})
-    }
+    //     fetch(uriGAS,
+    //     {
+    //         method: "POST",
+    //         body: formData
+    //     })
+    //     .then(response => response.json())
+    //     .then(result =>
+    //     {
+    //         if(result.success)
+    //         {
+    //             // 後端驗證成功，success 會是 true
+    //             // 這邊寫驗證成功後要做的事
+    //             document.getElementById('verify-true').classList.remove('none');
+    //         }
+    //         else
+    //         {
+    //             // success 為 false 時，代表驗證失敗，error-codes 會告知原因
+    //             window.alert(result['error-codes'][0])
+    //             document.getElementById('verify-false').classList.remove('none');
+    //         }
+    //     })
+    //     .catch(err => {window.alert(err)})
+    // }
 </script>
