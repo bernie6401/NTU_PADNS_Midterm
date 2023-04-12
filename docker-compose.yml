@@ -13,6 +13,7 @@ services:
         networks:
             - default
         # hostname: root.sbkntustws.social
+        hostname: ntupadns.sbkblog.online
     db:
         image: mysql:5.7
         environment:
@@ -25,6 +26,7 @@ services:
         networks:
             - default
         # hostname: root.sbkntustws.social
+        hostname: ntupadns.sbkblog.online
         restart: unless-stopped
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -33,6 +35,7 @@ services:
         ports:
             - 8002:80
         # hostname: root.sbkntustws.social
+        hostname: ntupadns.sbkblog.online
         environment:
             MYSQL_USER: sbk
             MYSQL_PASSWORD: taadtaad
