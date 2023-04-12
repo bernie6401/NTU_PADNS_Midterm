@@ -1,0 +1,28 @@
+/* for all page setup */
+.container-adjust{max-width: 1000px!important}
+
+/* all set up about header */
+.mb-top-adjust{margin-top: 50px!important}
+.border-adjust{border-radius:0.25rem!important}
+
+/* about img */
+.img-circle{border-radius:50%}
+
+/* about add btn */
+.bbb
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 60px;
+    position: fixed;
+    left: auto;
+    bottom: 50px;
+    background-color: #ffffff;
+    text-decoration: none;
+    opacity: 1;
+    z-index: 999;
+    display:inline-block;
+}
