@@ -1,34 +1,32 @@
-version: '3'
- 
+version: "3.9"
+
 services:
-   db:
-     image: mysql:5.7
-     container_name: mysql_wordpress
-     volumes:
-       - ./wordpress/db_data:/var/lib/mysql
-     restart: always
-     ports:
-       - "3307:3306"
-     environment:
-       MYSQL_ROOT_PASSWORD: wordpress_root_password
-       MYSQL_DATABASE: wordpress_db
-       MYSQL_USER: wordpress_user
-       MYSQL_PASSWORD: wordpress_password
- 
-   wordpress:
-     container_name: wordpress
-     depends_on:
-       - db
-     image: wordpress:latest
-     ports:
-       - "8888:80"
-     restart: always
-     volumes:
-       - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress_user
-       WORDPRESS_DB_PASSWORD: wordpress_password
-       WORDPRESS_DB_NAME: wordpress_db
+  db:
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 6401Bernie
+      MYSQL_DATABASE: myDB
+      MYSQL_USER: sbk
+      MYSQL_PASSWORD: Bernie6401
+    hostname: ntupadns.sbkblog.online
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "5000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: sbk
+      WORDPRESS_DB_PASSWORD: Bernie6401
+      WORDPRESS_DB_NAME: myDB
+    hostname: ntupadns.sbkblog.online
 volumes:
-    db_data: {}
+  db_data: {}
