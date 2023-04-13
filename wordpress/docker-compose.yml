@@ -10,8 +10,7 @@ services:
       MYSQL_ROOT_PASSWORD: 6401Bernie
       MYSQL_DATABASE: myDB
       MYSQL_USER: sbk
-      MYSQL_PASSWORD: Bernie6401
-    hostname: ntupadns.sbkblog.online
+      MYSQL_PASSWORD: taadtaad
 
   wordpress:
     depends_on:
@@ -25,8 +24,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: sbk
-      WORDPRESS_DB_PASSWORD: Bernie6401
+      WORDPRESS_DB_PASSWORD: taadtaad
       WORDPRESS_DB_NAME: myDB
-    hostname: ntupadns.sbkblog.online
 volumes:
   db_data: {}
