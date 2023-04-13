@@ -38,29 +38,29 @@
                 <label for="floatingPassword">Password</label>
               </div>
             </div>
-            <button
+            <!-- <button
               class="g-recaptcha w-100 btn btn-lg btn-primary btn-adjust"
               data-sitekey="6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks"
               data-action="verify1"
               data-callback="verifyCallback">
               You're robot or not?
-            </button>
-            </br>
-            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-false-1" type="button">You're robot.</button>
-            </br>
-            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-true-1" type="submit" name="login_submit">Login</button>
+            </button> -->
+            <!-- </br> -->
+            <!-- <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-false-1" type="button">You're robot.</button> -->
+            <!-- </br> -->
+            <button class="w-100 btn btn-lg btn-primary btn-adjust" id="verify-true-1" type="submit" name="login_submit">Login</button>
           </form>
         </div>
       </main>
 
       <footer class="mt-auto text-white-50">
-        <p>NTUST Web Security PA, by <a href="https://github.com/bernie6401" class="text-white">@SBK</a>.</p>
+        <p>NTU Practicum of Attacking and Defense of Network Security, by <a href="https://github.com/bernie6401" class="text-white">@SBK</a>.</p>
       </footer>
     </div>
   </body>
 </html>
 
-<script>
+<!-- <script>
   // 取 ip
   var uriIP = 'https://www.cloudflare.com/cdn-cgi/trace';
   var ip;
@@ -118,4 +118,4 @@
     })
     .catch(err => {window.alert(err)})
   }
-</script>
+</script> -->
