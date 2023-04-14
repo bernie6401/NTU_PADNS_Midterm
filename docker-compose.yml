@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: myDB
       MYSQL_USER: sbk
       MYSQL_PASSWORD: taadtaad
-    hostname: padns.sbkblog.online
+    hostname: demopadns.sbkblog.online
   wordpress:
     depends_on:
       - db
@@ -26,6 +26,6 @@ services:
       WORDPRESS_DB_USER: sbk
       WORDPRESS_DB_PASSWORD: taadtaad
       WORDPRESS_DB_NAME: myDB
-    hostname: padns.sbkblog.online
+    hostname: demopadns.sbkblog.online
 volumes:
   db_data: {}
