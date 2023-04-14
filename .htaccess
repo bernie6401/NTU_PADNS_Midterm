@@ -1,4 +1,14 @@
-
+# Begin AIOWPSEC Firewall
+	<IfModule mod_php5.c>
+		php_value auto_prepend_file '/var/www/html/aios-bootstrap.php'
+	</IfModule>
+	<IfModule mod_php7.c>
+		php_value auto_prepend_file '/var/www/html/aios-bootstrap.php'
+	</IfModule>
+	<IfModule mod_php.c>
+		php_value auto_prepend_file '/var/www/html/aios-bootstrap.php'
+	</IfModule>
+# End AIOWPSEC Firewall
 
 # BEGIN WordPress
 # 在含有 BEGIN WordPress 及 END WordPress 標記的這兩行間的指示詞內容為動態產生，
