@@ -1,0 +1,41 @@
+# The info below is as a instance that just show how to edit a docker-compose file
+version: "2"
+services:
+    web:
+        build: ./web-image
+        ports: 
+            - 8000:80
+        volumes:
+            - ./www:/var/www/html/
+        links:
+            - db
+        networks:
+            - default
+        # hostname: root.sbkntustws.social
+        hostname: ntupadns.sbkblog.online
+    db:
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE: myDB
+            MYSQL_USER: sbk
+            MYSQL_PASSWORD: taadtaad
+            MYSQL_ROOT_PASSWORD: taadtaad
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d
+        networks:
+            - default
+        # hostname: root.sbkntustws.social
+        hostname: ntupadns.sbkblog.online
+        restart: unless-stopped
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8002:80
+        # hostname: root.sbkntustws.social
+        hostname: ntupadns.sbkblog.online
+        environment:
+            MYSQL_USER: sbk
+            MYSQL_PASSWORD: taadtaad
+            MYSQL_ROOT_PASSWORD: taadtaad
