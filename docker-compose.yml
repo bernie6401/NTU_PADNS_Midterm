@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: myDB
       MYSQL_USER: sbk
       MYSQL_PASSWORD: taadtaad
-    hostname: ntupadns.sbkblog.online
+    hostname: padns.sbkblog.online
   wordpress:
     depends_on:
       - db
@@ -19,13 +19,13 @@ services:
     volumes:
       - ./:/var/www/html
     ports:
-      - "5000:80"
+      - 5000:80
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: sbk
       WORDPRESS_DB_PASSWORD: taadtaad
       WORDPRESS_DB_NAME: myDB
-    hostname: ntupadns.sbkblog.online
+    hostname: padns.sbkblog.online
 volumes:
   db_data: {}
